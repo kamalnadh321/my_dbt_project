@@ -6,9 +6,28 @@ sources:
     tables:
       - name: customers
         identifier: customers
+        loaded_at_field: updated_at
+        freshness:
+          warn_after: {count: 15, period: day}
+          error_after: {count: 999, period: day}   # never hard fail
+
       - name: orders
         identifier: orders
+        loaded_at_field: updated_at
+        freshness:
+          warn_after: {count: 15, period: day}
+          error_after: {count: 999, period: day}
+
       - name: orderitems
         identifier: orderitems
+        loaded_at_field: updated_at
+        freshness:
+          warn_after: {count: 15, period: day}
+          error_after: {count: 999, period: day}
+
       - name: employees
         identifier: employees
+        loaded_at_field: updated_at
+        freshness:
+          warn_after: {count: 15, period: day}
+          error_after: {count: 999, period: day}
